@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Run the Python program and test all input/output pairs in the tests folder
-python_script="switch_ternary_operator.py"
+python_script="basic_function.py"
 
 declare -A results
 
