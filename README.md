@@ -1,7 +1,7 @@
-# 2025-ITELEC2-LAB015
-Week 04 - Looping Statements
+# 2025-ITELEC2-LAB016
+Week 05 - Working with Functions
 
-Laboratory # 15 - Guided Coding Exercise: while Loop for User Input with a Sentinel Value
+Laboratory # 16 - Guided Coding Exercise: Basic Function Definition and Calling
 
 ## **Instructions**
 
@@ -77,7 +77,7 @@ Only perform this if this is the first time you will setup your Git Environment
 
 ### **Step 3: Complete the Assignment**
 
-**Laboratory # 15 - Guided Coding Exercise: while Loop for User Input with a Sentinel Value**
+**Laboratory # 16 - Guided Coding Exercise: Basic Function Definition and Calling**
 
    **Objective:**
    - Understand the use of a while loop for repetitive tasks.
@@ -189,7 +189,7 @@ git add .
    Write a meaningful commit message:
    
 ```bash
-git commit -m "Submitting Python Week 04 - Laboratory # 15"
+git commit -m "Submitting Python Week 04 - Laboratory # 16"
 ```
    
 4. Push your changes to GitHub:
