@@ -80,92 +80,66 @@ Only perform this if this is the first time you will setup your Git Environment
 **Laboratory # 16 - Guided Coding Exercise: Basic Function Definition and Calling**
 
    **Objective:**
-   - Understand the use of a while loop for repetitive tasks.
-   - Learn how to terminate a loop using a sentinel value.
-   - Recognize the advantages of looping for dynamic, user-driven processes.
-   - Practice input validation and error handling.
+   - Understand how to define and call a simple user-defined function.
+   - Learn the basic syntax of a function, including the use of the def keyword.
+   - Recognize why functions are useful (code reuse, modularity, and clarity).
 
    **Desired Output (Example 1):**
    ```bash
-   Enter a number (or 'stop' to finish): 5
-   Enter a number (or 'stop' to finish): 10
-   Enter a number (or 'stop' to finish): 3
-   Enter a number (or 'stop' to finish): stop
-   The total sum is: 18
+   Hello, Python Students!
    ```
       
    **Notable Observations (to be discussed after completing the exercise):**
-   - Python does not have a built-in switch statement like some other languages. Dictionaries provide a clean and efficient way to achieve similar functionality.
-   - The .get() method of a dictionary allows you to retrieve a value associated with a key. Crucially, it also lets you specify a default value that will be returned if the key is not found in the dictionary. This is very useful for handling cases where the user might enter invalid input.
-   - The ternary operator (value_if_true if condition else value_if_false) provides a concise way to write conditional expressions in a single line. It's useful for simple conditions where you want to assign one of two values.
-   - String methods like .strip() and .lower() are essential for normalizing user input, making your code more robust.
+   - Functions are blocks of reusable code. Defining a function allows you to give a name to a specific task or set of actions.
+   - Calling a function executes the code within its definition.
+   - Functions promote code organization and make your programs more modular and easier to understand.
+   - Docstrings are a valuable way to document your functions and explain what they do.
 
    **Python Best Practices**
-   - Input Normalization: Always normalize user input (e.g., convert to lowercase using .lower() and remove leading/trailing whitespace using .strip()) to handle variations in user input and prevent unexpected behavior.
-   - Dictionary .get() with Default: Use the .get() method with a default value when retrieving values from a dictionary. This is a best practice, especially when dealing with user input, as it provides a clean way to handle cases where the key might not exist.
-   - Readability: Even with concise constructs like the ternary operator, prioritize code readability. If a ternary expression becomes too complex, consider using a regular if...else statement for clarity.
-   - Descriptive Variable Names: Use meaningful variable names (e.g., day_messages, day, message, day_type).
-   - Comments: Add comments to explain your logic, especially when simulating control flow structures like a switch statement.
-   - Test Thoroughly: Test your code with various inputs, including valid days of the week (with different capitalization and spacing) and invalid days, to ensure it handles all cases correctly.
+   - Descriptive Function Names: Choose clear and descriptive names for your functions (e.g., greet is better than g).
+   - Docstrings: Include a docstring for every function you write. This helps explain the function's purpose, arguments (if any), and return value (if any).
+   - Indentation: Consistent indentation (4 spaces per level is standard) is crucial in Python. It defines the structure of your code and determines which code belongs to which function.
+   - Function Purpose: Each function should ideally perform one specific task. This makes your code more modular and easier to maintain.
+   - Test Thoroughly: Test your functions to ensure they work as expected.
 
    **Step-by-Step Instructions:**
 
    1. Setting up: Open your preferred Python environment or Text Editor, and create a Python Script.
-      - Required Filename: `while_loop_sentinel.py`
+      - Required Filename: `basic_function.py`
       
-   2. Initialize the sum variable:
-      - Create a variable named total_sum and initialize it to 0. This variable will store the sum of the numbers entered by the user.
+   2. Define the function (using def):
+      - Use the def keyword followed by the function name (e.g., greet).
+      - Add parentheses () after the function name. In this case, the function doesn't take any arguments, so the parentheses are empty.
+      - End the line with a colon :.
 ```python
-total_sum = 0
+def greet():
 ```
       
-   3.  Start a while loop that continues indefinitely:
-      - Use a while True loop. This creates a loop that will run continuously until explicitly stopped using the break statement.
+   3. Add a docstring (optional but recommended):
+      - Inside the function definition (indented), add a docstring. A docstring is a string literal enclosed in triple quotes ("""Docstring goes here""") that describes what the function does. It's good practice to include a docstring for every function you write.
 ```python
-while True:
+def greet():
+    """Prints a greeting message."""  # Docstring
 ```
 
-   4. Prompt the user for input:
-      - Inside the while loop, use the input() function to prompt the user to enter a number or "stop" to finish. Store the input in a variable named user_input.
+   4. Write the function body (indented):
+      - Inside the function definition (indented), write the code that you want the function to execute. In this case, you want to print the greeting message.
 ```python
-    user_input = input("Enter a number (or 'stop' to finish): ")
+    print("Hello, Python Students!")  # Function body
 ```
 
-   5. Check if the sentinel value 'stop' is entered:
-      - Convert the user_input to lowercase using .lower() and remove any leading/trailing whitespace using .strip(). - This handles variations in user input (e.g., "Stop", " STOP ", "stop").
-      - Use an if statement to check if the normalized user_input is equal to "stop".
-      - If it is, use the break statement to exit the while loop.
+   5. Call the function:
+      - After the function definition (not indented), call the function by its name followed by parentheses (). This will execute the code inside the function.
 ```python
-    if user_input.strip().lower() == "stop":
-        break  # Exit the loop
+greet()
 ```
 
-   6. Convert input to a number and add to total_sum (with error handling):
-      - After the if statement that checks for "stop", use a try-except block to handle potential ValueError exceptions that might occur if the user enters something that is not a number.
-      - Inside the try block:
-         - Convert the user_input to a float (to allow for decimal numbers).
-         - Add the converted number to total_sum using the += operator.
-      - Inside the except ValueError block:
-         - Print an error message to the user indicating that the input was invalid.
-```python
-    try:
-        number = float(user_input)
-        total_sum += number
-    except ValueError:
-        print("Invalid input. Please enter a numeric value or 'stop'.")
-```
-
-   7. Print the final total sum:
-      - After the while loop has finished (outside the loop), use the print() function to display the final value of total_sum.
-```python
-print("The total sum is:", total_sum)
-```
-   8. Complete Code: Combine the steps above to form the complete program.
-   9. Run the code: Execute your Python code.
-   10. Observe the output: Test the program by entering various numbers and then entering "stop" (in different cases and with extra spaces).  Also, test it by entering non-numeric input to see how the error handling works.
+   6. Complete Code: Combine the steps above to form the complete program.
+   7. Run the code: Execute your Python code.
+   8. Observe the output: You should see the greeting message printed to the console.
 
    **Conclusion**
-   This exercise demonstrated the use of a while loop for handling user input with a sentinel value.  You learned how to create a loop that continues until a specific condition is met (in this case, the user entering "stop").  You also practiced input validation and error handling using try-except blocks.  The while loop and sentinel values are very useful for creating interactive programs where the number of iterations depends on user input.  Robust error handling is crucial for creating reliable and user-friendly programs.
+   This exercise introduced the fundamental concept of defining and calling functions in Python. You learned the basic syntax of a function, including the def keyword, parentheses, and the function body.  You also learned about the importance of docstrings and the benefits of using functions for code reuse, organization, and clarity. Functions are essential building blocks for creating more complex and maintainable Python programs.
 
 ### **Step 4: Push Changes to GitHub**
 Once you've completed your changes, follow these steps to upload your work to your GitHub repository.
